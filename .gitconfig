@@ -1,0 +1,5 @@
+[user]
+	name = Daniel Dinnyes
+	email = dadinn@besenczy.com
+[core]
+	autocrlf = false
