@@ -5,4 +5,5 @@
 !.gitignore
 !.profile
 !.bashrc
+!.xkbmap
 !.tmux.conf
