@@ -18,3 +18,5 @@ PROMPTCOMMAND='history -a'
 
 alias ll='ls -lA --group-directories-first'
 alias rmrf='rm -rf'
+alias tmuxs='tmux new-session -s'
+alias tmuxa='tmux attach -t'
