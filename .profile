@@ -14,6 +14,8 @@ PROMPTCOMMAND='history -a'
 # User specific aliases and functions
 
 alias ll='ls -lA --group-directories-first'
+alias lrt='ll -rt'
+alias tailf='tail -f'
 alias rmrf='rm -rf'
 alias tmuxs='tmux new-session -s'
 alias tmuxa='tmux attach -t'
