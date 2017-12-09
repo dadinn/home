@@ -5,15 +5,15 @@ echo "sourcing ~/.profile ..."
 
 export PS1='\[\e[1;36m\]\u\[\e[m\]@\[\e[1;32m\]\H:\[\e[1;33m\]\w\[\e[m\]\n\[\e[1;31m\]\t\[\e[m\] \[\e[1;35m\][\!:$?]&[\j]\[\e[1;36m\]$\[\e[m\]'
 
-# system local apps on path
-export PATH=$PATH:$HOME/bin
-export HISTCONTROL=ingoredups
+# add user bins on path
+export PATH=$HOME/bin${PATH:+:}$PATH
+export HISTCONTROL='ignorespace:ignoredups:ereasedups'
+export PROMPT_COMMAND='history -a'
 shopt -s histappend
-PROMPTCOMMAND='history -a'
 
-# User specific aliases and functions
+# Aliases
 
-alias ll='ls -lA --group-directories-first'
+alias ll='ls -la --group-directories-first'
 alias lrt='ll -rt'
 alias tailf='tail -f'
 alias rmrf='rm -rf'
