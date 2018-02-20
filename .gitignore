@@ -9,3 +9,5 @@
 !.xkbmap
 !.tmux.conf
 !.emacs.d
+!.lein
+!.lein/profiles.clj
