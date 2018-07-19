@@ -15,5 +15,7 @@
    [clj-time "0.14.0"]
    [clojurewerkz/money "1.10.0"]
    [com.taoensso/timbre "4.10.0"]
-   [com.stuartsierra/component "0.3.2"]]}}
+   [com.stuartsierra/component "0.3.2"]]}
+ :uberjar
+ {:aot :all}}
 
