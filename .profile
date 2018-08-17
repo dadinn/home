@@ -1,9 +1,11 @@
 
-echo "sourcing ~/.profile ..."
-
-# Prompt
-
-export PS1='\[\e[1;36m\]\u\[\e[m\]@\[\e[1;32m\]\H:\[\e[1;33m\]\w\[\e[m\]\n\[\e[1;31m\]\t\[\e[m\] \[\e[1;35m\][\!:$?]&[\j]\[\e[1;36m\]$\[\e[m\]'
+if [ "$TERM" != "dumb" ]
+then
+    echo "sourcing ~/.profile"
+    export PS1='\[\e[1;36m\]\u\[\e[m\]@\[\e[1;32m\]\H:\[\e[1;33m\]\w\[\e[m\]\n\[\e[1;31m\]\t\[\e[m\] \[\e[1;35m\][\!:$?]&[\j]\[\e[1;36m\]$\[\e[m\]'
+else
+    export PS1='$ '
+fi
 
 # Path
 
