@@ -28,8 +28,10 @@ alias tmuxs='tmux new-session -s'
 alias tmuxa='tmux attach -t'
 alias gitlog='git log --graph --all --decorate'
 
-# Gnome & Thinkpad specific
+# Thinkpad specific stuff
 
+if synclient &> /dev/null
+then
 set_touchpad_OFF () {
     if type synclient > /dev/null
     then
@@ -47,6 +49,7 @@ set_touchpad_ON () {
 	echo "Not supported!"
     fi
 }
+fi
 
 set_visualbell_ON () {
     if type gsettings > /dev/null
