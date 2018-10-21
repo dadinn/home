@@ -51,6 +51,10 @@ set_touchpad_ON () {
 }
 fi
 
+# Gnome visual bell stuff
+
+if type gsettings &> /dev/null
+then
 set_visualbell_ON () {
     if type gsettings > /dev/null
     then
@@ -71,3 +75,4 @@ set_visualbell_OFF () {
 	echo "Not supported!"
     fi
 }
+fi
