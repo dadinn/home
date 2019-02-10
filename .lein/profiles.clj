@@ -17,5 +17,5 @@
    [com.taoensso/timbre "4.10.0"]
    [com.stuartsierra/component "0.3.2"]]}
  :uberjar
- {:aot :all}}
-
+ {:aot :all
+  :pedantic? :abort}}
