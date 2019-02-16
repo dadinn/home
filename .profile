@@ -34,7 +34,7 @@ alias gitlog='git log --graph --all --decorate'
 
 if synclient &> /dev/null
 then
-set_touchpad_OFF () {
+set_touchpad_off () {
     if type synclient > /dev/null
     then
 	synclient TouchpadOff=1
@@ -43,7 +43,7 @@ set_touchpad_OFF () {
     fi
 }
 
-set_touchpad_ON () {
+set_touchpad_on () {
     if type synclient > /dev/null
     then
 	synclient TouchpadOff=0
@@ -57,7 +57,7 @@ fi
 
 if type gsettings &> /dev/null
 then
-set_visualbell_ON () {
+set_visualbell_on () {
     if type gsettings > /dev/null
     then
 	gsettings set org.gnome.desktop.wm.preferences audible-bell false
@@ -68,7 +68,7 @@ set_visualbell_ON () {
     fi
 }
 
-set_visualbell_OFF () {
+set_visualbell_off () {
     if type gsettings > /dev/null
     then
 	gsettings set org.gnome.desktop.wm.preferences audible-bell true
