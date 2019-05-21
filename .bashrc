@@ -1,6 +1,6 @@
 
 if [ "$TERM" != "dumb" ]
-then echo "sourcing ~/.bashrc"
+then echo "sourcing $HOME/.bashrc"
 fi
 
 if [ -f /etc/bashrc ]
@@ -8,4 +8,4 @@ then . /etc/bashrc
 fi
 
 # Cygwin only loads .bashrc when starting shell
-. .profile
+. $HOME/.profile
