@@ -20,7 +20,7 @@ shopt -s histappend
 # Aliases
 
 alias ll='ls -la --group-directories-first'
-alias lrt='ll -rt'
+alias lt='ll -rt'
 alias tailf='tail -f'
 alias vgrep='grep -v'
 alias pgrep='pgrep -ia'
