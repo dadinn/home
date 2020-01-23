@@ -2,7 +2,7 @@
  {:plugins
   [[cider/cider-nrepl "0.22.0"]
    [com.billpiel/sayid "0.0.17"]
-   [lein-bin "0.3.5"]
+   [lein-binplus "0.6.5"]
    [lein-ring "0.12.4"]
    [lein-ancient "0.6.15"]
    [com.jakemccrary/lein-test-refresh "0.23.0"]]
