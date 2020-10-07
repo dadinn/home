@@ -5,3 +5,9 @@ then echo "sourcing $HOME/.bashrc"
 else
     PS1='$ '
 fi
+
+# History
+
+shopt -s histappend
+PROMPT_COMMAND="history -a; $PROMPT_COMMAND"
+HISTCONTROL='ignorespace:ignoredups:ereasedups'

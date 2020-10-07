@@ -8,12 +8,6 @@ fi
 
 export PATH="$HOME/bin${PATH:+:}$PATH"
 
-# History
-
-export HISTCONTROL='ignorespace:ignoredups:ereasedups'
-export PROMPT_COMMAND='history -a'
-shopt -s histappend
-
 # Aliases
 
 alias ll='ls -la --group-directories-first'
