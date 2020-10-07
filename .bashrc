@@ -27,3 +27,29 @@ alias gitlog='git log --graph --all --decorate'
 alias gitsuir='git submodule update --init --recursive'
 alias termbin='netcat termbin.com 9999'
 alias sudo="sudo "
+
+# Thinkpad Touchpad specific toggle functions
+if type synclient &> /dev/null
+then
+    set_touchpad_off () {
+	synclient TouchpadOff=1
+    }
+
+    set_touchpad_on () {
+	synclient TouchpadOff=0
+    }
+fi
+
+# Gnome specific visual bell toggle functions
+if type gsettings &> /dev/null
+then
+    set_visualbell_on () {
+	gsettings set org.gnome.desktop.wm.preferences audible-bell false
+	gsettings set org.gnome.desktop.wm.preferences visual-bell true
+    }
+
+    set_visualbell_off () {
+	gsettings set org.gnome.desktop.wm.preferences audible-bell true
+	gsettings set org.gnome.desktop.wm.preferences visual-bell false
+    }
+fi
