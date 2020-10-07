@@ -6,6 +6,3 @@ fi
 if [ -f /etc/bashrc ]
 then . /etc/bashrc
 fi
-
-# Cygwin only loads .bashrc when starting shell
-. $HOME/.profile
