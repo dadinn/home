@@ -1,7 +1,7 @@
 {:user
  {:plugins
-  [[cider/cider-nrepl "0.22.0"]
-   [com.billpiel/sayid "0.0.17"]
+  [[cider/cider-nrepl "0.25.3"]
+   [com.billpiel/sayid "0.1.0"]
    [lein-binplus "0.6.5"]
    [lein-ring "0.12.4"]
    [lein-ancient "0.6.15"]
