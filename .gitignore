@@ -5,7 +5,9 @@
 !.gitignore
 !.gitconfig
 !.profile
+!.bash_profile
 !.bashrc
+!.zshrc
 !.xkbmap
 !.tmux.conf
 !.emacs.d
