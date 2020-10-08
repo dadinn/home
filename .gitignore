@@ -4,7 +4,9 @@
 # Except these files...
 !.gitignore
 !.profile
+!.bash_profile
 !.bashrc
+!.zshrc
 !.xkbmap
 !.tmux.conf
 !.emacs.d
