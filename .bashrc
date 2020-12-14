@@ -13,7 +13,7 @@ PROMPT_COMMAND="history -a; $PROMPT_COMMAND"
 HISTCONTROL='ignorespace:ignoredups:ereasedups'
 
 # Aliases
-alias ll='ls -la --group-directories-first'
+alias ll='ls -la --group-directories-first --time-style=long-iso'
 alias lt='ll -rt'
 alias tailf='tail -f'
 alias vgrep='grep -v'
