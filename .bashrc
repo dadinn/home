@@ -70,3 +70,18 @@ then
 	git submodule sync && git submodule update --init --recursive
     }
 fi
+
+# netcat helper function to test listening on ports
+if type nc &> /dev/null
+then
+    nctest () {
+        if [ ! $# -eq 2 ]
+        then
+            echo USAGE: nctest HOST PORT
+        else
+            local HOST="$1"
+            local PORT="$2"
+            echo TEST | nc -N $HOST $PORT && echo OK || echo FAILED
+        fi
+    }
+fi
