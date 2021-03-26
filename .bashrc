@@ -27,6 +27,16 @@ alias gitlog='git log --graph --all --decorate'
 alias termbin='netcat termbin.com 9999'
 alias sudo="sudo "
 
+# load NVM core functions
+if [ -s "$NVM_DIR/nvm.sh" ]
+then . "$NVM_DIR/nvm.sh"
+fi
+
+# load NVM autocompletion
+if [ -s "$NVM_DIR/bash_completion" ]
+then . "$NVM_DIR/bash_completion"
+fi
+
 # Thinkpad Touchpad specific toggle functions
 if type synclient &> /dev/null
 then
