@@ -24,7 +24,6 @@ alias dush='du -sh'
 alias tmuxs='tmux new-session -s'
 alias tmuxa='tmux attach -t'
 alias gitlog='git log --graph --all --decorate'
-alias gitsuir='git submodule update --init --recursive'
 alias termbin='netcat termbin.com 9999'
 alias sudo="sudo "
 
@@ -51,5 +50,13 @@ then
     set_visualbell_off () {
 	gsettings set org.gnome.desktop.wm.preferences audible-bell true
 	gsettings set org.gnome.desktop.wm.preferences visual-bell false
+    }
+fi
+
+# git helper function to sync, init, and update submodules
+if type git &> /dev/null
+then
+    gitsuir () {
+	git submodule sync && git submodule update --init --recursive
     }
 fi
