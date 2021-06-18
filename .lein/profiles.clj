@@ -1,6 +1,6 @@
 {:user
  {:plugins
-  [[cider/cider-nrepl "0.25.3"]
+  [[cider/cider-nrepl "0.26.0"]
    [com.billpiel/sayid "0.1.0"]
    [lein-binplus "0.6.5"]
    [lein-ring "0.12.4"]
