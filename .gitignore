@@ -14,3 +14,4 @@
 !.nvm
 !.lein
 !.lein/profiles.clj
+!.guile
