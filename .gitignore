@@ -4,6 +4,7 @@
 # Except these files...
 !.gitignore
 !.gitconfig
+!.hushlogin
 !.profile
 !.bash_profile
 !.bashrc
