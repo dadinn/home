@@ -63,6 +63,28 @@ then
     }
 fi
 
+if type apt &> /dev/null
+then
+    apt_history_logs () {
+	ls -rv /var/log/apt/history.log.*.gz | xargs cat | gunzip -c
+	cat /var/log/apt/history.log
+    }
+
+    apt_history () {
+	apt_history_logs | sed -E 's;([^:]+): ;\1=;' | awk -F '=' '
+function printdata() {
+  gsub("  "," ",data["Start-Date"]);
+  gsub(" (.*)",":",data["Requested-By"]);
+  gsub("(apt|apt-get) ","",data["Commandline"]);
+  print data["Start-Date"] " " data["Requested-By"] " " data["Commandline"]
+}
+{ data[$1] = $2 }
+NF == 0 { printdata(); delete data }
+END { printdata() }
+' | grep '\(install\|remove\|purge\|dist-upgrade\)' | tac
+    }
+fi
+
 # git helper function to sync, init, and update submodules
 if type git &> /dev/null
 then
