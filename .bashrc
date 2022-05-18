@@ -41,11 +41,11 @@ fi
 if type synclient &> /dev/null
 then
     set_touchpad_off () {
-	synclient TouchpadOff=1
+        synclient TouchpadOff=1
     }
 
     set_touchpad_on () {
-	synclient TouchpadOff=0
+        synclient TouchpadOff=0
     }
 fi
 
@@ -53,25 +53,25 @@ fi
 if type gsettings &> /dev/null
 then
     set_visualbell_on () {
-	gsettings set org.gnome.desktop.wm.preferences audible-bell false
-	gsettings set org.gnome.desktop.wm.preferences visual-bell true
+        gsettings set org.gnome.desktop.wm.preferences audible-bell false
+        gsettings set org.gnome.desktop.wm.preferences visual-bell true
     }
 
     set_visualbell_off () {
-	gsettings set org.gnome.desktop.wm.preferences audible-bell true
-	gsettings set org.gnome.desktop.wm.preferences visual-bell false
+        gsettings set org.gnome.desktop.wm.preferences audible-bell true
+        gsettings set org.gnome.desktop.wm.preferences visual-bell false
     }
 fi
 
 if type apt &> /dev/null
 then
     apt_history_logs () {
-	ls -rv /var/log/apt/history.log.*.gz | xargs cat | gunzip -c
-	cat /var/log/apt/history.log
+        ls -rv /var/log/apt/history.log.*.gz | xargs cat | gunzip -c
+        cat /var/log/apt/history.log
     }
 
     apt_history () {
-	apt_history_logs | sed -E 's;([^:]+): ;\1=;' | awk -F '=' '
+        apt_history_logs | sed -E 's;([^:]+): ;\1=;' | awk -F '=' '
 function printdata() {
   gsub("  "," ",data["Start-Date"]);
   gsub(" (.*)",":",data["Requested-By"]);
@@ -89,7 +89,7 @@ fi
 if type git &> /dev/null
 then
     gitsuir () {
-	git submodule sync && git submodule update --init --recursive
+        git submodule sync && git submodule update --init --recursive
     }
 fi
 
