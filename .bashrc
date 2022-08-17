@@ -7,6 +7,9 @@ else
     PS1='$ '
 fi
 
+# make GLOB patterns match hidden files too, except . and ..
+shopt -s dotglob
+
 # History
 shopt -s histappend
 PROMPT_COMMAND="history -a; $PROMPT_COMMAND"
