@@ -31,6 +31,7 @@ alias dush='du -sh'
 alias tmuxs='tmux new-session -s'
 alias tmuxa='tmux attach -t'
 alias gitlog='git log --graph --all --decorate'
+alias gitclone='git clone --recursive'
 alias termbin='netcat termbin.com 9999'
 alias sudo="sudo "
 
