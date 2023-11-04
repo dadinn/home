@@ -10,6 +10,10 @@ fi
 # make GLOB patterns match hidden files too, except . and ..
 shopt -s dotglob
 
+# make glob patterns expand to empty string if nothing matches
+# otherwise if nothing matches, tho glob pattern exands to itself
+shopt -s nullglob
+
 # History
 shopt -s histappend
 PROMPT_COMMAND="history -a; $PROMPT_COMMAND"
