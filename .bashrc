@@ -40,26 +40,40 @@ fi
 # Thinkpad Touchpad specific toggle functions
 if type synclient &> /dev/null
 then
-    set_touchpad_off () {
-        synclient TouchpadOff=1
-    }
-
-    set_touchpad_on () {
-        synclient TouchpadOff=0
+    swap_touchpad () {
+        status="$(synclient | grep TouchpadOff | cut -d= -f2 | xargs)"
+        if [ "$status" = 1 ]
+        then
+            synclient TouchpadOff=0
+            echo "Turned touchpad on!"
+        elif [ "$status" = 0 ]
+        then
+            synclient TouchpadOff=1
+            echo "Turned touchpad off!"
+        else
+            echo "Unrecognised touchpad status: $status!"
+        fi
     }
 fi
 
 # Gnome specific visual bell toggle functions
 if type gsettings &> /dev/null
 then
-    set_visualbell_on () {
-        gsettings set org.gnome.desktop.wm.preferences audible-bell false
-        gsettings set org.gnome.desktop.wm.preferences visual-bell true
-    }
-
-    set_visualbell_off () {
-        gsettings set org.gnome.desktop.wm.preferences audible-bell true
-        gsettings set org.gnome.desktop.wm.preferences visual-bell false
+    swap_visualbell () {
+        status="$(gsettings get org.gnome.desktop.wm.preferences visual-bell | xargs | tr '[:upper:]' '[:lower:]')"
+        if [ "$status" = "true" ]
+        then
+            gsettings set org.gnome.desktop.wm.preferences audible-bell true
+            gsettings set org.gnome.desktop.wm.preferences visual-bell false
+            echo "Turned visualbell off, audiobell on!"
+        elif [ "$status" = "false" ]
+        then
+            gsettings set org.gnome.desktop.wm.preferences audible-bell false
+            gsettings set org.gnome.desktop.wm.preferences visual-bell true
+            echo "Turned visualbell on, audiobell off!"
+        else
+            echo "Unrecognised visualbell status: $status!"
+        fi
     }
 fi
 
